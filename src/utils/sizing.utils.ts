@@ -1,4 +1,4 @@
-import { ObjectFit } from "../../../types/next.types";
+import { ObjectFit } from "../types/sizing.types";
 
 export const getObjectFitClass = (objectFit: ObjectFit) => {
     const objectFitClass = {
