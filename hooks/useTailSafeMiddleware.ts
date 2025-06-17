@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { TailSafe } from '../types';
-import { construct } from '../utils/underline.utils';
+import { construct } from '../utils/tailSafe.utils';
 
 export function useTailSafeMiddleware<T extends { className?: string }>(
     props: T & Partial<TailSafe>
