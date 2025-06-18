@@ -15,29 +15,36 @@ export function tailSafeSwcPlugin(options: SwcPluginOptions = {}) {
         excludePatterns = ['**/node_modules/**']
     } = options;
 
-    return {
-        name: 'tail-safe-swc-plugin',
-        // Next.js SWC plugin format
-        transform: (source: string, id: string) => {
-            // Only process .tsx and .jsx files
-            if (!id.endsWith('.tsx') && !id.endsWith('.jsx')) {
-                return null;
+    return () => {
+        return {
+            name: 'tail-safe-swc-plugin',
+            // Next.js SWC plugin format
+            transform: (source: string, id: string) => {
+                // Only process .tsx and .jsx files
+                if (!id.endsWith('.tsx') && !id.endsWith('.jsx')) {
+                    return null;
+                }
+
+                // Check if file should be excluded
+                if (excludePatterns.some(pattern => id.includes(pattern))) {
+                    return null;
+                }
+
+                // Transform the source code
+                const transformed = transformSource(source, defaultProps);
+
+                return {
+                    code: transformed,
+                    map: null
+                };
             }
-
-            // Check if file should be excluded
-            if (excludePatterns.some(pattern => id.includes(pattern))) {
-                return null;
-            }
-
-            // Transform the source code
-            const transformed = transformSource(source, defaultProps);
-
-            return {
-                code: transformed,
-                map: null
-            };
-        }
+        };
     };
+}
+
+// Default export for Next.js SWC plugin
+export default function (options: SwcPluginOptions = {}) {
+    return tailSafeSwcPlugin(options)();
 }
 
 function transformSource(source: string, defaultProps: Partial<TailSafe>): string {
@@ -51,6 +58,12 @@ function transformSource(source: string, defaultProps: Partial<TailSafe>): strin
 
     while ((match = jsxElementRegex.exec(source)) !== null) {
         const [fullMatch, tagName, attributes] = match;
+
+        // Skip if attributes is undefined
+        if (!attributes) {
+            continue;
+        }
+
         const tailSafeProps = extractTailSafeProps(attributes);
 
         if (Object.keys(tailSafeProps).length === 0) {
@@ -94,7 +107,7 @@ function extractTailSafeProps(attributes: string): Record<string, string> {
         // Handle both single and double quotes, and multi-line attributes
         const regex = new RegExp(`${propName}=["']([^"']*)["']`, 'g');
         const match = regex.exec(attributes);
-        if (match) {
+        if (match && match[1]) {
             tailSafeProps[propName] = match[1];
         }
     });

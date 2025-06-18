@@ -54,18 +54,21 @@
         "react",
         "babel-plugin",
         "swc-plugin",
-        "utility-first"
+        "utility-first",
+        "styling",
+        "css-in-js",
+        "type-safe"
     ],
     "author": "Charl de Waal",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/your-username/tailsafe.git"
+        "url": "https://github.com/charldewaal/tailsafe.git"
     },
     "bugs": {
-        "url": "https://github.com/your-username/tailsafe/issues"
+        "url": "https://github.com/charldewaal/tailsafe/issues"
     },
-    "homepage": "https://github.com/your-username/tailsafe#readme",
+    "homepage": "https://github.com/charldewaal/tailsafe#readme",
     "peerDependencies": {
         "react": ">=16.8.0",
         "tailwindcss": ">=3.0.0"
