@@ -100,7 +100,7 @@ npx tailsafe # Generates client side provider and type definitions
 
 ### 🎯 Two Ways to Use TailSafe:
 
-## Method 1: Pre-built HTML Elements
+### Method 1: Pre-built HTML Elements
 
 Best for: Quick prototyping and common HTML elements
 
@@ -132,7 +132,7 @@ function LoginForm() {
 
 Available Elements: All intrinsic HTML elements come with built-in TailSafe support!
 
-## Method 2: Higher-Order Component (withTailSafe)
+### Method 2: Higher-Order Component (withTailSafe)
 
 Best for: Wrapping existing components or third-party libraries
 
