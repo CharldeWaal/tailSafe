@@ -8,6 +8,7 @@ TailSafe is a TypeScript-first library that provides type-safe, aliased Tailwind
 2. Design System Aliases: Define reusable aliases for common Tailwind class combinations
 3. Auto-Generated Types: Automatically generates TypeScript interfaces from your Tailwind config
 4. Provider System: Centralized configuration management for your entire app
+5. Multiple Integration Patterns: HOC-based, and pre-built HTML elements
 
 ## Installation
 
@@ -94,15 +95,65 @@ const tailSafeConfig: TailSafeConfig = {
 After adding custom aliases, run the following commmand to register your alias prop types
 
 ```bash
-npx tailsafe # Generates provider components and type definitions
+npx tailsafe # Generates client side provider and type definitions
 ```
 
-### 3. Use in components
+### 🎯 Two Ways to Use TailSafe:
+
+## Method 1: Pre-built HTML Elements
+
+Best for: Quick prototyping and common HTML elements
 
 ```tsx
-import { Div } from "tailsafe";
+import { Button, Div, Input, Form } from "tailsafe";
 
-<Div flex-center />;
+function LoginForm() {
+  return (
+    <Form card center>
+      <Input
+        type="email"
+        placeholder="Email"
+        input-field // Your custom alias
+        className="mb-4"
+      />
+      <Input
+        type="password"
+        placeholder="Password"
+        input-field
+        className="mb-4"
+      />
+      <Button btn-primary type="submit">
+        Login
+      </Button>
+    </Form>
+  );
+}
+```
+
+Available Elements: All intrinsic HTML elements come with built-in TailSafe support!
+
+## Method 2: Higher-Order Component (withTailSafe)
+
+Best for: Wrapping existing components or third-party libraries
+
+```tsx
+import { withTailSafe } from "tailsafe";
+import { MyExistingButton } from "./components";
+
+// Enhance any existing component
+const TailSafeButton = withTailSafe(MyExistingButton);
+
+function MyComponent() {
+  return (
+    <TailSafeButton btn-primary center onClick={handleClick}>
+      Enhanced Button
+    </TailSafeButton>
+  );
+}
+
+// Works with third-party components too
+import { Button as ChakraButton } from "@chakra-ui/react";
+const TailSafeChakraButton = withTailSafe(ChakraButton);
 ```
 
 ### 🎯 Key Benefits:
@@ -112,6 +163,17 @@ import { Div } from "tailsafe";
 - 🎨 Design Consistency: Enforce design system patterns
 - ⚡ Developer Experience: IntelliSense for your custom design tokens
 - 🔧 Build-Time Generation: No runtime overhead, everything is pre-compiled
+- 🧩 Flexible Integration: Choose the pattern that works best for your use case
+- 📦 Pre-built Components: Ready-to-use HTML elements with TailSafe support
+
+### 🚀 Use Cases:
+
+- Design Systems: Standardize component styling across teams
+- Rapid Prototyping: Use pre-built elements with semantic props
+- Legacy Integration: Enhance existing components with withTailSafe
+- Type-Safe Styling: Catch styling errors at compile time
+- Team Collaboration: Share design tokens through TypeScript interfaces
+- Perfect for: Teams wanting to bridge design systems with Tailwind CSS while maintaining type safety, flexibility, and developer productivity across different integration patterns.
 
 ## Compatibility
 
