@@ -26,7 +26,7 @@ Add the following to your tsconfig.json paths aliases
 
 ```ts
     "paths": {
-      "tailSafe/provider": [
+      "tailsafe/provider": [
         "./.tailSafe/ProviderWrapper.tsx"
       ]
     }
