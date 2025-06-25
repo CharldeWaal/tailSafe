@@ -1,6 +1,6 @@
 {
     "name": "tailsafe",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "TailSafe - transform props to Tailwind classes",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
