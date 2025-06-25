@@ -794,6 +794,7 @@ export type BgClass =
   | 'bg-zinc-900'
   | 'bg-zinc-950'
   | 'bg-gradient-to-b'
+  | 'bg-gradient-to-r'
   | 'bg-inherit'
   | 'bg-current'
   | 'bg-transparent'
@@ -3720,6 +3721,14 @@ export interface FontProps {
   'font'?: FontClass;
 }
 
+export type FromClass =
+  | 'from-blue-600'
+;
+
+export interface FromProps {
+  'from'?: FromClass | boolean;
+}
+
 export type GapClass =
   | 'gap-0'
   | 'gap-1'
@@ -6242,6 +6251,14 @@ export type TextClass =
 
 export interface TextProps {
   'text'?: TextClass;
+}
+
+export type ToClass =
+  | 'to-purple-600'
+;
+
+export interface ToProps {
+  'to'?: ToClass | boolean;
 }
 
 export type TopClass =
