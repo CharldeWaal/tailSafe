@@ -24,7 +24,8 @@
     "files": [
         "dist",
         "bin",
-        "src/scripts",
+        "src/scripts/postInstall.js",
+        "src/codegen/codegen.module.js",
         "src/config/tailSafe.config.template.ts"
     ],
     "scripts": {
