@@ -1516,6 +1516,7 @@ export type TailwindClass =
   | 'object-scale-down'
   | 'p-1'
   | 'p-3'
+  | 'p-4'
   | 'p-6'
   | 'p-8'
   | 'p-16'

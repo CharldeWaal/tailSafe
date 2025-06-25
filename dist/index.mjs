@@ -54,14 +54,6 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/generated/generatedTailSafeInterface.ts
-var generatedTailSafeInterface_exports = {};
-var init_generatedTailSafeInterface = __esm({
-  "src/generated/generatedTailSafeInterface.ts"() {
-    "use strict";
-  }
-});
-
 // src/generated/generatedTailSafeMap.ts
 var generatedTailSafeMap_exports = {};
 __export(generatedTailSafeMap_exports, {
@@ -275,16 +267,6 @@ var init_generatedAllProps = __esm({
     ];
   }
 });
-
-// src/types/tailSafe.types.ts
-var GeneratedTailSafe = {};
-try {
-  const generated = (init_generatedTailSafeInterface(), __toCommonJS(generatedTailSafeInterface_exports));
-  GeneratedTailSafe = generated.TailSafe || {};
-} catch (error) {
-  console.warn("TailSafe: Generated interface not found, using minimal fallback");
-  GeneratedTailSafe = {};
-}
 
 // src/components/HtmlElements/htmlElement.tsx
 import React3 from "react";

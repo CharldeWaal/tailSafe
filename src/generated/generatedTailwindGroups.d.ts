@@ -4507,6 +4507,7 @@ export interface OverflowProps {
 export type PClass =
   | 'p-1'
   | 'p-3'
+  | 'p-4'
   | 'p-6'
   | 'p-8'
   | 'p-16'

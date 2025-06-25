@@ -14,19 +14,14 @@ export interface TailSafeConfig {
 }
 
 // Graceful import with fallback
-let GeneratedTailSafe: Record<string, string> = {};
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const generated = require('../generated/generatedTailSafeInterface');
-  GeneratedTailSafe = generated.TailSafe || {};
-} catch (error) {
-  // eslint-disable-next-line no-console
-  console.warn('TailSafe: Generated interface not found, using minimal fallback');
-  GeneratedTailSafe = {};
-}
+type GeneratedTailSafe = import('../generated/generatedTailSafeInterface').TailSafe extends infer T
+  ? T extends Record<string, any>
+    ? T
+    : {}
+  : {};
 
 // Merge generated interface with base - user aliases can extend this via module augmentation
-export interface TailSafe extends TailSafeBase {
+export interface TailSafe extends TailSafeBase, GeneratedTailSafe {
   // The generated props will be merged here if available
   // User aliases can be added via module augmentation
 }

@@ -59,14 +59,6 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/generated/generatedTailSafeInterface.ts
-var generatedTailSafeInterface_exports = {};
-var init_generatedTailSafeInterface = __esm({
-  "src/generated/generatedTailSafeInterface.ts"() {
-    "use strict";
-  }
-});
-
 // src/generated/generatedTailSafeMap.ts
 var generatedTailSafeMap_exports = {};
 __export(generatedTailSafeMap_exports, {
@@ -401,16 +393,6 @@ __export(index_exports, {
   withTailSafe: () => withTailSafe
 });
 module.exports = __toCommonJS(index_exports);
-
-// src/types/tailSafe.types.ts
-var GeneratedTailSafe = {};
-try {
-  const generated = (init_generatedTailSafeInterface(), __toCommonJS(generatedTailSafeInterface_exports));
-  GeneratedTailSafe = generated.TailSafe || {};
-} catch (error) {
-  console.warn("TailSafe: Generated interface not found, using minimal fallback");
-  GeneratedTailSafe = {};
-}
 
 // src/components/HtmlElements/htmlElement.tsx
 var import_react5 = __toESM(require("react"));
