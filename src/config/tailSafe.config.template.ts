@@ -1,5 +1,5 @@
 // tailSafe User Configuration
-import { TailSafeConfig } from "tailSafe";
+import { TailSafeConfig } from "tailsafe";
 
 const tailSafeConfig: TailSafeConfig = {
     aliases: {

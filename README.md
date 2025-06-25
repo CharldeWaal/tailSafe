@@ -1,26 +1,29 @@
 # TailSafe 🦈
 
-Tailsafe provides an ergonomic way of using Tailwind CSS in React, replacing className strings with component props
+TailSafe is a TypeScript-first library that provides type-safe, aliased Tailwind CSS for React applications. It bridges the gap between design systems and Tailwind by allowing developers to create reusable, semantic component props.
 
-🔥 Beautiful DX: Developers get the clean syntax they want:
+### ✨ What it does:
 
-```tsx
-<Div flex-center />
-```
+1. Type-Safe Tailwind: Converts custom semantic props into Tailwind classes with full TypeScript support
+2. Design System Aliases: Define reusable aliases for common Tailwind class combinations
+3. Auto-Generated Types: Automatically generates TypeScript interfaces from your Tailwind config
+4. Provider System: Centralized configuration management for your entire app
 
 ## Installation
 
 ```bash
 yarn add tailsafe
+# Auto-creates tailSafe.config.ts in your project root
 ```
 
 or
 
 ```bash
 npm install tailsafe
+# Auto-creates tailSafe.config.ts in your project root
 ```
 
-## Setup
+## Configuration
 
 Add the following to your tsconfig.json paths aliases
 
@@ -56,28 +59,59 @@ export default function RootLayout({
 }
 ```
 
-### 2. Add custom aliases
+### 2. Define Aliases (in tailSafe.config.ts)
 
 ```tsx
-    aliases: {
-        // Example alias
-        flex-row: ['flex', 'flex-row', 'items-center', 'justify-center', 'bg-red-500'],
-    },
+const tailSafeConfig: TailSafeConfig = {
+  aliases: {
+    // Semantic design aliases
+    "btn-primary": [
+      "bg-blue-500",
+      "text-white",
+      "px-4",
+      "py-2",
+      "rounded",
+      "hover:bg-blue-600",
+    ],
+    card: ["bg-white", "rounded-lg", "shadow-md", "p-6"],
+    center: ["flex", "items-center", "justify-center"],
+
+    // Complex layouts made simple
+    "hero-section": [
+      "min-h-screen",
+      "bg-gradient-to-r",
+      "from-blue-600",
+      "to-purple-600",
+      "flex",
+      "items-center",
+    ],
+  },
+};
 ```
 
-Run the following commmand to register your alias prop types
+🛠 CLI Integration:
+
+After adding custom aliases, run the following commmand to register your alias prop types
 
 ```bash
-npx tailsafe
+npx tailsafe # Generates provider components and type definitions
 ```
 
-### 3. Import and use TailSafe components in your code
+### 3. Use in components
 
 ```tsx
 import { Div } from "tailsafe";
 
 <Div flex-center />;
 ```
+
+### 🎯 Key Benefits:
+
+- 🔒 Type Safety: Full TypeScript support for all your aliases
+- ♻️ Reusability: Define once, use everywhere
+- 🎨 Design Consistency: Enforce design system patterns
+- ⚡ Developer Experience: IntelliSense for your custom design tokens
+- 🔧 Build-Time Generation: No runtime overhead, everything is pre-compiled
 
 ## Compatibility
 
