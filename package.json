@@ -1,5 +1,5 @@
 {
-    "name": "tailSafe",
+    "name": "tailsafe",
     "version": "1.0.0",
     "description": "TailSafe - transforms TailSafe props to Tailwind classes",
     "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "homepage": "https://github.com/CharldeWaal/tailSafe",
     "repository": {
         "type": "git",
-        "url": "https://github.com/CharldeWaal/tailSafe.git"
+        "url": "git+https://github.com/CharldeWaal/tailSafe.git"
     },
     "bugs": {
         "url": "https://github.com/CharldeWaal/tailsafe/issues"
@@ -44,7 +44,7 @@
         "lint": "eslint . --ext .ts,.tsx"
     },
     "bin": {
-        "tailsafe": "./bin/tailsafe.js"
+        "tailsafe": "bin/tailsafe.js"
     },
     "keywords": [
         "tailwind",
