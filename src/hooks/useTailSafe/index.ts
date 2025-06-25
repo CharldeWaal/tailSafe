@@ -1,0 +1,1 @@
+export { useTailSafe } from './useTailSafe';

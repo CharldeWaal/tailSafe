@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "declaration": true,
+        "declarationDir": "dist",
+        "outDir": "dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
+    },
+    "include": [
+        "src/**/*",
+        "../../components/ProviderWrapper.tsx",
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "archive"
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "name": "tailSafe",
+    "version": "1.0.0",
+    "description": "TailSafe - transforms TailSafe props to Tailwind classes",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "homepage": "https://github.com/CharldeWaal/tailSafe",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CharldeWaal/tailSafe.git"
+    },
+    "bugs": {
+        "url": "https://github.com/CharldeWaal/tailsafe/issues"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "default": "./src/index.ts"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "tsup src/index.ts --format cjs,esm --dts --no-splitting --clean",
+        "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+        "tailwind:build": "tailwindcss -c tailwind.config.js -o output.css",
+        "codegen:test": "node src/codegen/codegen.test.js",
+        "codegen:types": "node src/codegen/codegen.types.js",
+        "codegen:colors": "node src/codegen/codegen.colors.js",
+        "codegen:groups": "node -r ts-node/register src/codegen/codegen.groups.js",
+        "codegen:map": "node -r ts-node/register src/codegen/codegen.map.js",
+        "codegen:allProps": "node -r ts-node/register src/codegen/codegen.allProps.js",
+        "codegen:module": "node -r ts-node/register src/codegen/codegen.module.js",
+        "codegen:coverage": "node src/codegen/check-group-coverage.js",
+        "codegen:all": "yarn codegen:types && yarn codegen:colors && yarn codegen:groups && yarn codegen:map && yarn codegen:allProps",
+        "prebuild": "yarn codegen:all",
+        "generate:build": "yarn prebuild && yarn build",
+        "postinstall": "node src/scripts/postInstall.js",
+        "lint": "eslint . --ext .ts,.tsx"
+    },
+    "bin": {
+        "tailsafe": "./bin/tailsafe.js"
+    },
+    "keywords": [
+        "tailwind",
+        "css",
+        "nextjs",
+        "react",
+        "typescript"
+    ],
+    "author": "Charl de Waal",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0",
+        "tailwindcss": "^4.1.8"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.10",
+        "@tailwindcss/postcss": "^4.1.10",
+        "cosmiconfig": "^9.0.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "tailwindcss": "^4.1.10",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.0.0",
+        "typescript": "^5.0.0"
+    }
+}

@@ -1,0 +1,1 @@
+export { withTailSafe } from './WithTailSafe';
