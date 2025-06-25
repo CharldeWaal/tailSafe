@@ -8,8 +8,6 @@ Tailsafe provides an ergonomic way of using Tailwind CSS in React, replacing cla
 <Div flex-center />
 ```
 
-🛡️ DOM Safety: Custom props are automatically filtered out, preventing React warnings
-
 ## Installation
 
 ```bash
@@ -22,11 +20,23 @@ or
 npm install tailsafe
 ```
 
+## Setup
+
+Add the following to your tsconfig.json paths aliases
+
+```ts
+    "paths": {
+      "tailSafe/provider": [
+        "./.tailSafe/ProviderWrapper.tsx"
+      ]
+    }
+```
+
 ## Quick Start
 
 ### 1. Wrap your Next.js or React app with TailSafeProvider
 
-In your `app/layout.tsx` (Next.js 13+ App Router):
+In your `app/layout.tsx` (Next.js 13+ App Router Example):
 
 ```tsx
 import { TailSafeProvider } from "tailsafe";
@@ -44,6 +54,29 @@ export default function RootLayout({
     </html>
   );
 }
+```
+
+### 2. Add custom aliases
+
+```tsx
+    aliases: {
+        // Example alias
+        flex-row: ['flex', 'flex-row', 'items-center', 'justify-center', 'bg-red-500'],
+    },
+```
+
+Run the following commmand to register your alias prop types
+
+```bash
+npx tailsafe
+```
+
+### 3. Import and use TailSafe components in your code
+
+```tsx
+import { Div } from "tailsafe";
+
+<Div flex-center />;
 ```
 
 ## Compatibility
