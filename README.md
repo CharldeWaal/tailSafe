@@ -34,12 +34,12 @@ Add the following to your tsconfig.json paths aliases
 
 ## Quick Start
 
-### 1. Wrap your Next.js or React app with TailSafeProvider
+### 1. Wrap your App with TailSafeProvider (Next.js 13+ App Router Example)
 
-In your `app/layout.tsx` (Next.js 13+ App Router Example):
+In your `app/layout.tsx` :
 
 ```tsx
-import { TailSafeProvider } from "tailsafe";
+import { TailSafeProvider } from "tailsafe/provider";
 
 export default function RootLayout({
   children,
