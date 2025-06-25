@@ -35,7 +35,6 @@ export const allTailSafeProps: string[] = [
   "grid",
   "h",
   "hidden",
-  "hover",
   "inline",
   "invert",
   "italic",

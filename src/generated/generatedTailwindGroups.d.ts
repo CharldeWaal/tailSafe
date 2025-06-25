@@ -3821,14 +3821,6 @@ export interface HiddenProps {
   'hidden'?: HiddenClass | boolean;
 }
 
-export type HoverClass =
-  | 'hover'
-;
-
-export interface HoverProps {
-  'hover'?: HoverClass | boolean;
-}
-
 export type InlineClass =
   | 'inline'
   | 'inline-block'

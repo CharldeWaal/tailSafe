@@ -476,12 +476,6 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
-  .bottom-\[-1px\] {
-    bottom: -1px;
-  }
-  .bottom-\[-2px\] {
-    bottom: -2px;
-  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
@@ -802,12 +796,6 @@
   }
   .h-35 {
     height: calc(var(--spacing) * 35);
-  }
-  .h-\[0\.5px\] {
-    height: 0.5px;
-  }
-  .h-\[2px\] {
-    height: 2px;
   }
   .h-full {
     height: 100%;
@@ -10281,71 +10269,10 @@
     --tw-ease: linear;
     transition-timing-function: linear;
   }
-  .after\:absolute {
-    &::after {
-      content: var(--tw-content);
-      position: absolute;
-    }
-  }
-  .after\:bottom-\[-0\.5px\] {
-    &::after {
-      content: var(--tw-content);
-      bottom: -0.5px;
-    }
-  }
-  .after\:left-0 {
-    &::after {
-      content: var(--tw-content);
-      left: calc(var(--spacing) * 0);
-    }
-  }
-  .after\:h-\[0\.5px\] {
-    &::after {
-      content: var(--tw-content);
-      height: 0.5px;
-    }
-  }
-  .after\:w-0 {
-    &::after {
-      content: var(--tw-content);
-      width: calc(var(--spacing) * 0);
-    }
-  }
-  .after\:bg-gray-900 {
-    &::after {
-      content: var(--tw-content);
-      background-color: var(--color-gray-900);
-    }
-  }
-  .after\:transition-\[width\] {
-    &::after {
-      content: var(--tw-content);
-      transition-property: width;
-      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-      transition-duration: var(--tw-duration, var(--default-transition-duration));
-    }
-  }
-  .after\:duration-500 {
-    &::after {
-      content: var(--tw-content);
-      --tw-duration: 500ms;
-      transition-duration: 500ms;
-    }
-  }
   .hover\:bg-blue-600 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-600);
-      }
-    }
-  }
-  .hover\:after\:w-full {
-    &:hover {
-      @media (hover: hover) {
-        &::after {
-          content: var(--tw-content);
-          width: 100%;
-        }
       }
     }
   }
@@ -10579,11 +10506,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-content {
-  syntax: "*";
-  initial-value: "";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -10640,7 +10562,6 @@
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-content: "";
     }
   }
 }

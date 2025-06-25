@@ -32,7 +32,6 @@ export const tailSafeMap = {
   'grid': (v: boolean | string) => (v === true ? 'grid' : v),
   'h': (v: string) => v,
   'hidden': (v: boolean | string) => (v === true ? 'hidden' : v),
-  'hover': (v: boolean | string) => (v === true ? 'hover' : v),
   'inline': (v: boolean | string) => (v === true ? 'inline' : v),
   'invert': (v: boolean | string) => (v === true ? 'invert' : v),
   'italic': (v: boolean | string) => (v === true ? 'italic' : v),
