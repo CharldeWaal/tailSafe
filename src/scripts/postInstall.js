@@ -3,18 +3,54 @@ const fs = require('fs');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path');
 
-// The source template file inside your package
-const templatePath = path.resolve(__dirname, '../config/tailSafe.config.template.ts');
+// Function to find the template file in different possible locations
+function findTemplatePath() {
+    const possiblePaths = [
+        // Development scenario (when working on the package itself)
+        path.resolve(__dirname, '../config/tailSafe.config.template.ts'),
+        // Published package scenario (when installed as dependency)
+        path.resolve(__dirname, '../../src/config/tailSafe.config.template.ts'),
+        // Alternative published package scenario
+        path.resolve(__dirname, '../../../src/config/tailSafe.config.template.ts')
+    ];
+    
+    for (const templatePath of possiblePaths) {
+        if (fs.existsSync(templatePath)) {
+            return templatePath;
+        }
+    }
+    
+    // eslint-disable-next-line no-console
+    console.error('❌ Could not find tailSafe.config.template.ts');
+    return null;
+}
+
+// Find the template file
+const templatePath = findTemplatePath();
+
+if (!templatePath) {
+    process.exit(1);
+}
 
 // The destination for the config file in the user's project root
 // process.env.INIT_CWD is the reliable way to get the user's project directory
-const destPath = path.resolve(process.env.INIT_CWD, 'tailSafe.config.ts');
+const userProjectRoot = process.env.INIT_CWD || process.cwd();
+const destPath = path.resolve(userProjectRoot, 'tailSafe.config.ts');
 
 // Only create the file if it doesn't already exist
 if (!fs.existsSync(destPath)) {
-    fs.copyFileSync(templatePath, destPath);
+    try {
+        fs.copyFileSync(templatePath, destPath);
+        // eslint-disable-next-line no-console
+        console.log('✅ Created tailSafe.config.ts in your project root.');
+        // eslint-disable-next-line no-console
+        console.log('   You can now customize your TailSafe configuration!');
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('❌ Failed to create tailSafe.config.ts:', error.message);
+        process.exit(1);
+    }
+} else {
     // eslint-disable-next-line no-console
-    console.log('✅ Created tailSafe.config.js in your project root.');
-    // eslint-disable-next-line no-console
-    console.log('   You can now customize your aliases!');
+    console.log('ℹ️  tailSafe.config.ts already exists, skipping creation.');
 }

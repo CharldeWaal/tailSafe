@@ -22,7 +22,10 @@
         }
     },
     "files": [
-        "dist"
+        "dist",
+        "bin",
+        "src/scripts",
+        "src/config/tailSafe.config.template.ts"
     ],
     "scripts": {
         "clean": "rm -rf dist",
