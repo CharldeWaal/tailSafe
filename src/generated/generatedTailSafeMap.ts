@@ -4,6 +4,7 @@
 export const tailSafeMap = {
   'absolute': (v: boolean | string) => (v === true ? 'absolute' : v),
   'accent': (v: string) => v,
+  'align': (v: boolean | string) => (v === true ? 'items-center' : v),
   'antialiased': (v: boolean | string) => (v === true ? 'antialiased' : v),
   'auto': (v: string) => v,
   'backdrop': (v: string) => v,

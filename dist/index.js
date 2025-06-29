@@ -71,6 +71,7 @@ var init_generatedTailSafeMap = __esm({
     tailSafeMap = {
       "absolute": (v) => v === true ? "absolute" : v,
       "accent": (v) => v,
+      "align": (v) => v === true ? "items-center" : v,
       "antialiased": (v) => v === true ? "antialiased" : v,
       "auto": (v) => v,
       "backdrop": (v) => v,
@@ -168,108 +169,13 @@ var init_tailSafe_config = __esm({
       aliases: {
         "flex-row": ["flex", "flex-row"],
         "flex-col": ["flex", "flex-col"],
-        "justify": ["justify-center"]
+        "justify": ["justify-center"],
+        "align": ["items-center"]
         // Add more grouped/alias props as needed
       },
       theme: {}
     };
     tailSafe_config_default = tailSafeConfig;
-  }
-});
-
-// src/generated/generatedAllProps.ts
-var generatedAllProps_exports = {};
-__export(generatedAllProps_exports, {
-  allTailSafeProps: () => allTailSafeProps
-});
-var allTailSafeProps;
-var init_generatedAllProps = __esm({
-  "src/generated/generatedAllProps.ts"() {
-    "use strict";
-    allTailSafeProps = [
-      "absolute",
-      "accent",
-      "antialiased",
-      "auto",
-      "backdrop",
-      "bg",
-      "block",
-      "blur",
-      "border",
-      "caret",
-      "className",
-      "col",
-      "cursor",
-      "decoration",
-      "divide",
-      "drop",
-      "duration",
-      "ease",
-      "fill",
-      "filter",
-      "fixed",
-      "flex",
-      "flex-col",
-      "flex-row",
-      "flow",
-      "font",
-      "from",
-      "gap",
-      "grayscale",
-      "grid",
-      "h",
-      "hidden",
-      "inline",
-      "invert",
-      "italic",
-      "items",
-      "justify",
-      "leading",
-      "left",
-      "max",
-      "mb",
-      "min",
-      "mt",
-      "mx",
-      "my",
-      "object",
-      "opacity",
-      "outline",
-      "overflow",
-      "p",
-      "pl",
-      "place",
-      "pointer",
-      "pr",
-      "pt",
-      "px",
-      "py",
-      "relative",
-      "resize",
-      "right",
-      "ring",
-      "rounded",
-      "row",
-      "sepia",
-      "shadow",
-      "space",
-      "sr",
-      "static",
-      "sticky",
-      "stroke",
-      "table",
-      "text",
-      "to",
-      "top",
-      "tracking",
-      "transform",
-      "transition",
-      "translate",
-      "underline",
-      "uppercase",
-      "w",
-      "z"
-    ];
   }
 });
 
@@ -553,12 +459,11 @@ var useTailSafe = () => (0, import_react3.useContext)(TailSafeContext);
 // src/hooks/useConfig/useConfig.ts
 var import_react4 = require("react");
 
-// src/components/HtmlElements/htmlElement.tsx
-var import_jsx_runtime3 = require("react/jsx-runtime");
+// src/utils/dom.utils.ts
 var TAILSAFE_PROPS = /* @__PURE__ */ new Set();
 try {
-  const { allTailSafeProps: allTailSafeProps2 } = (init_generatedAllProps(), __toCommonJS(generatedAllProps_exports));
-  TAILSAFE_PROPS = new Set(allTailSafeProps2 || []);
+  const { allTailSafeProps } = require("../../generated/generatedAllProps");
+  TAILSAFE_PROPS = new Set(allTailSafeProps || []);
 } catch (error) {
   console.warn("TailSafe: Generated props not found, relying on user aliases for filtering");
   TAILSAFE_PROPS = /* @__PURE__ */ new Set();
@@ -579,6 +484,9 @@ function filterDomProps(props, userAliases = {}) {
   }
   return domProps;
 }
+
+// src/components/HtmlElements/htmlElement.tsx
+var import_jsx_runtime3 = require("react/jsx-runtime");
 var createTailSafeHtmlElement = (element) => {
   const Component = import_react5.default.forwardRef((props, ref) => {
     const { transformProps, userAliases = {} } = useTailSafe();
@@ -709,9 +617,10 @@ var import_react6 = __toESM(require("react"));
 var import_jsx_runtime4 = require("react/jsx-runtime");
 function withTailSafe(Component) {
   const Wrapped = import_react6.default.forwardRef((props, ref) => {
-    const { transformProps } = useTailSafe();
-    const transformedProps = transformProps(props);
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Component, __spreadProps(__spreadValues({}, transformedProps), { ref }));
+    const { transformProps, userAliases = {} } = useTailSafe();
+    const _a = transformProps(props), { className } = _a, rest = __objRest(_a, ["className"]);
+    const domProps = filterDomProps(rest, userAliases);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Component, __spreadProps(__spreadValues({}, domProps), { ref }));
   });
   Wrapped.displayName = `withTailSafe(${Component.displayName || Component.name || "Component"})`;
   return Wrapped;

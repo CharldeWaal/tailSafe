@@ -8,7 +8,7 @@ type AbsoluteClass =
 ;
 
 interface AbsoluteProps {
-  'absolute'?: AbsoluteClass | boolean;
+  absolute?: AbsoluteClass | boolean;
 }
 
 type AccentClass =
@@ -510,7 +510,7 @@ type AccentClass =
 ;
 
 interface AccentProps {
-  'accent'?: AccentClass;
+  accent?: AccentClass;
 }
 
 type AntialiasedClass =
@@ -518,7 +518,7 @@ type AntialiasedClass =
 ;
 
 interface AntialiasedProps {
-  'antialiased'?: AntialiasedClass | boolean;
+  antialiased?: AntialiasedClass | boolean;
 }
 
 type AutoClass =
@@ -533,7 +533,7 @@ type AutoClass =
 ;
 
 interface AutoProps {
-  'auto'?: AutoClass;
+  auto?: AutoClass;
 }
 
 type BackdropClass =
@@ -544,7 +544,7 @@ type BackdropClass =
 ;
 
 interface BackdropProps {
-  'backdrop'?: BackdropClass;
+  backdrop?: BackdropClass;
 }
 
 type BgClass =
@@ -1048,7 +1048,7 @@ type BgClass =
 ;
 
 interface BgProps {
-  'bg'?: BgClass;
+  bg?: BgClass;
 }
 
 type BlockClass =
@@ -1056,7 +1056,7 @@ type BlockClass =
 ;
 
 interface BlockProps {
-  'block'?: BlockClass | boolean;
+  block?: BlockClass | boolean;
 }
 
 type BlurClass =
@@ -1064,7 +1064,7 @@ type BlurClass =
 ;
 
 interface BlurProps {
-  'blur'?: BlurClass | boolean;
+  blur?: BlurClass | boolean;
 }
 
 type BorderClass =
@@ -1574,7 +1574,7 @@ type BorderClass =
 ;
 
 interface BorderProps {
-  'border'?: BorderClass | boolean;
+  border?: BorderClass | boolean;
 }
 
 type CaretClass =
@@ -2076,7 +2076,7 @@ type CaretClass =
 ;
 
 interface CaretProps {
-  'caret'?: CaretClass;
+  caret?: CaretClass;
 }
 
 type ColClass =
@@ -2124,7 +2124,7 @@ type ColClass =
 ;
 
 interface ColProps {
-  'col'?: ColClass;
+  col?: ColClass;
 }
 
 type CursorClass =
@@ -2132,7 +2132,7 @@ type CursorClass =
 ;
 
 interface CursorProps {
-  'cursor'?: CursorClass | boolean;
+  cursor?: CursorClass | boolean;
 }
 
 type DecorationClass =
@@ -2634,7 +2634,7 @@ type DecorationClass =
 ;
 
 interface DecorationProps {
-  'decoration'?: DecorationClass;
+  decoration?: DecorationClass;
 }
 
 type DivideClass =
@@ -3136,7 +3136,7 @@ type DivideClass =
 ;
 
 interface DivideProps {
-  'divide'?: DivideClass;
+  divide?: DivideClass;
 }
 
 type DropClass =
@@ -3144,7 +3144,7 @@ type DropClass =
 ;
 
 interface DropProps {
-  'drop'?: DropClass | boolean;
+  drop?: DropClass | boolean;
 }
 
 type DurationClass =
@@ -3160,7 +3160,7 @@ type DurationClass =
 ;
 
 interface DurationProps {
-  'duration'?: DurationClass;
+  duration?: DurationClass;
 }
 
 type EaseClass =
@@ -3169,7 +3169,7 @@ type EaseClass =
 ;
 
 interface EaseProps {
-  'ease'?: EaseClass;
+  ease?: EaseClass;
 }
 
 type FillClass =
@@ -3671,7 +3671,7 @@ type FillClass =
 ;
 
 interface FillProps {
-  'fill'?: FillClass;
+  fill?: FillClass;
 }
 
 type FilterClass =
@@ -3679,7 +3679,7 @@ type FilterClass =
 ;
 
 interface FilterProps {
-  'filter'?: FilterClass | boolean;
+  filter?: FilterClass | boolean;
 }
 
 type FixedClass =
@@ -3687,7 +3687,7 @@ type FixedClass =
 ;
 
 interface FixedProps {
-  'fixed'?: FixedClass | boolean;
+  fixed?: FixedClass | boolean;
 }
 
 type FlexClass =
@@ -3698,7 +3698,7 @@ type FlexClass =
 ;
 
 interface FlexProps {
-  'flex'?: FlexClass | boolean;
+  flex?: FlexClass | boolean;
 }
 
 type FlowClass =
@@ -3706,7 +3706,7 @@ type FlowClass =
 ;
 
 interface FlowProps {
-  'flow'?: FlowClass | boolean;
+  flow?: FlowClass | boolean;
 }
 
 type FontClass =
@@ -3720,7 +3720,7 @@ type FontClass =
 ;
 
 interface FontProps {
-  'font'?: FontClass;
+  font?: FontClass;
 }
 
 type FromClass =
@@ -3728,7 +3728,7 @@ type FromClass =
 ;
 
 interface FromProps {
-  'from'?: FromClass | boolean;
+  from?: FromClass | boolean;
 }
 
 type GapClass =
@@ -3766,7 +3766,7 @@ type GapClass =
 ;
 
 interface GapProps {
-  'gap'?: GapClass;
+  gap?: GapClass;
 }
 
 type GrayscaleClass =
@@ -3774,7 +3774,7 @@ type GrayscaleClass =
 ;
 
 interface GrayscaleProps {
-  'grayscale'?: GrayscaleClass | boolean;
+  grayscale?: GrayscaleClass | boolean;
 }
 
 type GridClass =
@@ -3807,7 +3807,7 @@ type GridClass =
 ;
 
 interface GridProps {
-  'grid'?: GridClass | boolean;
+  grid?: GridClass | boolean;
 }
 
 type HClass =
@@ -3821,7 +3821,7 @@ type HClass =
 ;
 
 interface HProps {
-  'h'?: HClass;
+  h?: HClass;
 }
 
 type HiddenClass =
@@ -3829,7 +3829,7 @@ type HiddenClass =
 ;
 
 interface HiddenProps {
-  'hidden'?: HiddenClass | boolean;
+  hidden?: HiddenClass | boolean;
 }
 
 type InlineClass =
@@ -3840,7 +3840,7 @@ type InlineClass =
 ;
 
 interface InlineProps {
-  'inline'?: InlineClass | boolean;
+  inline?: InlineClass | boolean;
 }
 
 type InvertClass =
@@ -3848,7 +3848,7 @@ type InvertClass =
 ;
 
 interface InvertProps {
-  'invert'?: InvertClass | boolean;
+  invert?: InvertClass | boolean;
 }
 
 type ItalicClass =
@@ -3856,7 +3856,7 @@ type ItalicClass =
 ;
 
 interface ItalicProps {
-  'italic'?: ItalicClass | boolean;
+  italic?: ItalicClass | boolean;
 }
 
 type ItemsClass =
@@ -3871,7 +3871,7 @@ type ItemsClass =
 ;
 
 interface ItemsProps {
-  'items'?: ItemsClass;
+  items?: ItemsClass;
 }
 
 type JustifyClass =
@@ -3889,7 +3889,7 @@ type JustifyClass =
 ;
 
 interface JustifyProps {
-  'justify'?: JustifyClass | boolean;
+  justify?: JustifyClass | boolean;
 }
 
 type LeadingClass =
@@ -3898,7 +3898,7 @@ type LeadingClass =
 ;
 
 interface LeadingProps {
-  'leading'?: LeadingClass;
+  leading?: LeadingClass;
 }
 
 type LeftClass =
@@ -3906,7 +3906,7 @@ type LeftClass =
 ;
 
 interface LeftProps {
-  'left'?: LeftClass | boolean;
+  left?: LeftClass | boolean;
 }
 
 type MaxClass =
@@ -3917,7 +3917,7 @@ type MaxClass =
 ;
 
 interface MaxProps {
-  'max'?: MaxClass;
+  max?: MaxClass;
 }
 
 type MbClass =
@@ -3932,7 +3932,7 @@ type MbClass =
 ;
 
 interface MbProps {
-  'mb'?: MbClass;
+  mb?: MbClass;
 }
 
 type MinClass =
@@ -3940,7 +3940,7 @@ type MinClass =
 ;
 
 interface MinProps {
-  'min'?: MinClass | boolean;
+  min?: MinClass | boolean;
 }
 
 type MtClass =
@@ -3952,7 +3952,7 @@ type MtClass =
 ;
 
 interface MtProps {
-  'mt'?: MtClass;
+  mt?: MtClass;
 }
 
 type MxClass =
@@ -3962,7 +3962,7 @@ type MxClass =
 ;
 
 interface MxProps {
-  'mx'?: MxClass;
+  mx?: MxClass;
 }
 
 type MyClass =
@@ -3970,7 +3970,7 @@ type MyClass =
 ;
 
 interface MyProps {
-  'my'?: MyClass | boolean;
+  my?: MyClass | boolean;
 }
 
 type ObjectClass =
@@ -3982,7 +3982,7 @@ type ObjectClass =
 ;
 
 interface ObjectProps {
-  'object'?: ObjectClass;
+  object?: ObjectClass;
 }
 
 type OpacityClass =
@@ -3991,7 +3991,7 @@ type OpacityClass =
 ;
 
 interface OpacityProps {
-  'opacity'?: OpacityClass;
+  opacity?: OpacityClass;
 }
 
 type OutlineClass =
@@ -4494,7 +4494,7 @@ type OutlineClass =
 ;
 
 interface OutlineProps {
-  'outline'?: OutlineClass | boolean;
+  outline?: OutlineClass | boolean;
 }
 
 type OverflowClass =
@@ -4503,7 +4503,7 @@ type OverflowClass =
 ;
 
 interface OverflowProps {
-  'overflow'?: OverflowClass;
+  overflow?: OverflowClass;
 }
 
 type PClass =
@@ -4516,7 +4516,7 @@ type PClass =
 ;
 
 interface PProps {
-  'p'?: PClass;
+  p?: PClass;
 }
 
 type PlClass =
@@ -4524,7 +4524,7 @@ type PlClass =
 ;
 
 interface PlProps {
-  'pl'?: PlClass | boolean;
+  pl?: PlClass | boolean;
 }
 
 type PlaceClass =
@@ -4548,7 +4548,7 @@ type PlaceClass =
 ;
 
 interface PlaceProps {
-  'place'?: PlaceClass;
+  place?: PlaceClass;
 }
 
 type PointerClass =
@@ -4556,7 +4556,7 @@ type PointerClass =
 ;
 
 interface PointerProps {
-  'pointer'?: PointerClass | boolean;
+  pointer?: PointerClass | boolean;
 }
 
 type PrClass =
@@ -4564,7 +4564,7 @@ type PrClass =
 ;
 
 interface PrProps {
-  'pr'?: PrClass | boolean;
+  pr?: PrClass | boolean;
 }
 
 type PtClass =
@@ -4573,7 +4573,7 @@ type PtClass =
 ;
 
 interface PtProps {
-  'pt'?: PtClass;
+  pt?: PtClass;
 }
 
 type PxClass =
@@ -4583,7 +4583,7 @@ type PxClass =
 ;
 
 interface PxProps {
-  'px'?: PxClass;
+  px?: PxClass;
 }
 
 type PyClass =
@@ -4597,7 +4597,7 @@ type PyClass =
 ;
 
 interface PyProps {
-  'py'?: PyClass;
+  py?: PyClass;
 }
 
 type RelativeClass =
@@ -4605,7 +4605,7 @@ type RelativeClass =
 ;
 
 interface RelativeProps {
-  'relative'?: RelativeClass | boolean;
+  relative?: RelativeClass | boolean;
 }
 
 type ResizeClass =
@@ -4613,7 +4613,7 @@ type ResizeClass =
 ;
 
 interface ResizeProps {
-  'resize'?: ResizeClass | boolean;
+  resize?: ResizeClass | boolean;
 }
 
 type RightClass =
@@ -4622,7 +4622,7 @@ type RightClass =
 ;
 
 interface RightProps {
-  'right'?: RightClass;
+  right?: RightClass;
 }
 
 type RingClass =
@@ -5125,7 +5125,7 @@ type RingClass =
 ;
 
 interface RingProps {
-  'ring'?: RingClass | boolean;
+  ring?: RingClass | boolean;
 }
 
 type RoundedClass =
@@ -5144,7 +5144,7 @@ type RoundedClass =
 ;
 
 interface RoundedProps {
-  'rounded'?: RoundedClass | boolean;
+  rounded?: RoundedClass | boolean;
 }
 
 type RowClass =
@@ -5180,7 +5180,7 @@ type RowClass =
 ;
 
 interface RowProps {
-  'row'?: RowClass;
+  row?: RowClass;
 }
 
 type SepiaClass =
@@ -5188,7 +5188,7 @@ type SepiaClass =
 ;
 
 interface SepiaProps {
-  'sepia'?: SepiaClass | boolean;
+  sepia?: SepiaClass | boolean;
 }
 
 type ShadowClass =
@@ -5198,7 +5198,7 @@ type ShadowClass =
 ;
 
 interface ShadowProps {
-  'shadow'?: ShadowClass | boolean;
+  shadow?: ShadowClass | boolean;
 }
 
 type SpaceClass =
@@ -5209,7 +5209,7 @@ type SpaceClass =
 ;
 
 interface SpaceProps {
-  'space'?: SpaceClass;
+  space?: SpaceClass;
 }
 
 type SrClass =
@@ -5217,7 +5217,7 @@ type SrClass =
 ;
 
 interface SrProps {
-  'sr'?: SrClass | boolean;
+  sr?: SrClass | boolean;
 }
 
 type StaticClass =
@@ -5225,7 +5225,7 @@ type StaticClass =
 ;
 
 interface StaticProps {
-  'static'?: StaticClass | boolean;
+  static?: StaticClass | boolean;
 }
 
 type StickyClass =
@@ -5233,7 +5233,7 @@ type StickyClass =
 ;
 
 interface StickyProps {
-  'sticky'?: StickyClass | boolean;
+  sticky?: StickyClass | boolean;
 }
 
 type StrokeClass =
@@ -5735,7 +5735,7 @@ type StrokeClass =
 ;
 
 interface StrokeProps {
-  'stroke'?: StrokeClass;
+  stroke?: StrokeClass;
 }
 
 type TableClass =
@@ -5743,7 +5743,7 @@ type TableClass =
 ;
 
 interface TableProps {
-  'table'?: TableClass | boolean;
+  table?: TableClass | boolean;
 }
 
 type TextClass =
@@ -6253,7 +6253,7 @@ type TextClass =
 ;
 
 interface TextProps {
-  'text'?: TextClass;
+  text?: TextClass;
 }
 
 type ToClass =
@@ -6261,7 +6261,7 @@ type ToClass =
 ;
 
 interface ToProps {
-  'to'?: ToClass | boolean;
+  to?: ToClass | boolean;
 }
 
 type TopClass =
@@ -6270,7 +6270,7 @@ type TopClass =
 ;
 
 interface TopProps {
-  'top'?: TopClass;
+  top?: TopClass;
 }
 
 type TrackingClass =
@@ -6280,7 +6280,7 @@ type TrackingClass =
 ;
 
 interface TrackingProps {
-  'tracking'?: TrackingClass;
+  tracking?: TrackingClass;
 }
 
 type TransformClass =
@@ -6288,7 +6288,7 @@ type TransformClass =
 ;
 
 interface TransformProps {
-  'transform'?: TransformClass | boolean;
+  transform?: TransformClass | boolean;
 }
 
 type TransitionClass =
@@ -6302,7 +6302,7 @@ type TransitionClass =
 ;
 
 interface TransitionProps {
-  'transition'?: TransitionClass | boolean;
+  transition?: TransitionClass | boolean;
 }
 
 type TranslateClass =
@@ -6311,7 +6311,7 @@ type TranslateClass =
 ;
 
 interface TranslateProps {
-  'translate'?: TranslateClass;
+  translate?: TranslateClass;
 }
 
 type UnderlineClass =
@@ -6319,7 +6319,7 @@ type UnderlineClass =
 ;
 
 interface UnderlineProps {
-  'underline'?: UnderlineClass | boolean;
+  underline?: UnderlineClass | boolean;
 }
 
 type UppercaseClass =
@@ -6327,7 +6327,7 @@ type UppercaseClass =
 ;
 
 interface UppercaseProps {
-  'uppercase'?: UppercaseClass | boolean;
+  uppercase?: UppercaseClass | boolean;
 }
 
 type WClass =
@@ -6341,7 +6341,7 @@ type WClass =
 ;
 
 interface WProps {
-  'w'?: WClass;
+  w?: WClass;
 }
 
 type ZClass =
@@ -6352,7 +6352,7 @@ type ZClass =
 ;
 
 interface ZProps {
-  'z'?: ZClass;
+  z?: ZClass;
 }
 
 /**
@@ -6369,7 +6369,14 @@ interface FlexColAliasProps {
   'flex-col'?: boolean;
 }
 
-interface TailSafe$1 extends AbsoluteProps, AccentProps, AntialiasedProps, AutoProps, BackdropProps, BgProps, BlockProps, BlurProps, BorderProps, CaretProps, ColProps, CursorProps, DecorationProps, DivideProps, DropProps, DurationProps, EaseProps, FillProps, FilterProps, FixedProps, FlexColAliasProps, FlexProps, FlexRowAliasProps, FlowProps, FontProps, FromProps, GapProps, GrayscaleProps, GridProps, HProps, HiddenProps, InlineProps, InvertProps, ItalicProps, ItemsProps, JustifyProps, LeadingProps, LeftProps, MaxProps, MbProps, MinProps, MtProps, MxProps, MyProps, ObjectProps, OpacityProps, OutlineProps, OverflowProps, PProps, PlProps, PlaceProps, PointerProps, PrProps, PtProps, PxProps, PyProps, RelativeProps, ResizeProps, RightProps, RingProps, RoundedProps, RowProps, SepiaProps, ShadowProps, SpaceProps, SrProps, StaticProps, StickyProps, StrokeProps, TableProps, TextProps, ToProps, TopProps, TrackingProps, TransformProps, TransitionProps, TranslateProps, UnderlineProps, UppercaseProps, WProps, ZProps {
+/**
+ * AlignAliasProps alias
+ */
+interface AlignAliasProps {
+  align?: boolean;
+}
+
+interface TailSafe$1 extends AbsoluteProps, AccentProps, AlignAliasProps, AntialiasedProps, AutoProps, BackdropProps, BgProps, BlockProps, BlurProps, BorderProps, CaretProps, ColProps, CursorProps, DecorationProps, DivideProps, DropProps, DurationProps, EaseProps, FillProps, FilterProps, FixedProps, FlexColAliasProps, FlexProps, FlexRowAliasProps, FlowProps, FontProps, FromProps, GapProps, GrayscaleProps, GridProps, HProps, HiddenProps, InlineProps, InvertProps, ItalicProps, ItemsProps, JustifyProps, LeadingProps, LeftProps, MaxProps, MbProps, MinProps, MtProps, MxProps, MyProps, ObjectProps, OpacityProps, OutlineProps, OverflowProps, PProps, PlProps, PlaceProps, PointerProps, PrProps, PtProps, PxProps, PyProps, RelativeProps, ResizeProps, RightProps, RingProps, RoundedProps, RowProps, SepiaProps, ShadowProps, SpaceProps, SrProps, StaticProps, StickyProps, StrokeProps, TableProps, TextProps, ToProps, TopProps, TrackingProps, TransformProps, TransitionProps, TranslateProps, UnderlineProps, UppercaseProps, WProps, ZProps {
     /**
      * Optional className to pass to the element.
      * Will be merged with any classes generated from TailSafe props.

@@ -6,6 +6,7 @@
 export const allTailSafeProps: string[] = [
   "absolute",
   "accent",
+  "align",
   "antialiased",
   "auto",
   "backdrop",

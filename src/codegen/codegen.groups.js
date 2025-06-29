@@ -67,8 +67,8 @@ for (const prefix of Object.keys(groupMap).sort()) {
   const isBooleanUtility =
     values.length === 1 || values.includes(prefix) || values.includes(`${prefix}-`) || prefix in tailSafeConfig.aliases;
   const propType = isBooleanUtility ? `${typeName} | boolean` : typeName;
-  // The prefix MUST be quoted to handle reserved keywords like 'in'.
-  output += `export interface ${interfaceName} {\n  '${prefix}'?: ${propType};\n}\n\n`;
+  const propKey = prefix.includes('-') || prefix.includes(':') ? `'${prefix}'` : prefix;
+  output += `export interface ${interfaceName} {\n  ${propKey}?: ${propType};\n}\n\n`;
 }
 
 // Add alias props as interfaces
@@ -86,7 +86,9 @@ for (const [alias] of Object.entries(tailSafeConfig.aliases)) {
 
     allPropInterfaces.push(interfaceName);
     output += `/**\n * ${interfaceName} alias\n */\n`;
-    output += `export interface ${interfaceName} {\n  '${alias}'?: boolean;\n}\n\n`;
+
+    const aliasKey = alias.includes('-') || alias.includes(':') ? `'${alias}'` : alias;
+    output += `export interface ${interfaceName} {\n  ${aliasKey}?: boolean;\n}\n\n`;
   }
 }
 
