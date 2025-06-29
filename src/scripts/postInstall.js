@@ -13,13 +13,13 @@ function findTemplatePath() {
         // Alternative published package scenario
         path.resolve(__dirname, '../../../src/config/tailSafe.config.template.ts')
     ];
-    
+
     for (const templatePath of possiblePaths) {
         if (fs.existsSync(templatePath)) {
             return templatePath;
         }
     }
-    
+
     // eslint-disable-next-line no-console
     console.error('❌ Could not find tailSafe.config.template.ts');
     return null;
@@ -30,12 +30,12 @@ function getUserProjectRoot() {
     // INIT_CWD is set by npm/yarn and represents the directory where the install command was run
     const initCwd = process.env.INIT_CWD;
     const cwd = process.cwd();
-    
+
     // If INIT_CWD is available and different from current directory, use it
     if (initCwd && initCwd !== cwd) {
         return initCwd;
     }
-    
+
     // Fallback: look for package.json to find project root
     let currentDir = cwd;
     while (currentDir !== path.dirname(currentDir)) {
@@ -53,7 +53,7 @@ function getUserProjectRoot() {
         }
         currentDir = path.dirname(currentDir);
     }
-    
+
     // Final fallback
     return initCwd || cwd;
 }
@@ -70,11 +70,11 @@ const userProjectRoot = getUserProjectRoot();
 const destPath = path.resolve(userProjectRoot, 'tailSafe.config.ts');
 
 // Debug info (only shown if not in the tailsafe package itself)
-const currentPackageJson = path.join(process.cwd(), 'package.json');
+const projectPackageJson = path.join(userProjectRoot, 'package.json');
 let isInTailSafePackage = false;
 try {
-    if (fs.existsSync(currentPackageJson)) {
-        const pkg = JSON.parse(fs.readFileSync(currentPackageJson, 'utf8'));
+    if (fs.existsSync(projectPackageJson)) {
+        const pkg = JSON.parse(fs.readFileSync(projectPackageJson, 'utf8'));
         isInTailSafePackage = pkg.name === 'tailsafe';
     }
 } catch (error) {
@@ -102,6 +102,6 @@ if (!fs.existsSync(destPath)) {
 } else {
     if (!isInTailSafePackage) {
         // eslint-disable-next-line no-console
-        console.log('ℹ️  tailSafe.config.ts already exists, skipping creation.');
+        console.log('ℹ️  tailSafe.config.ts already exists');
     }
 }
