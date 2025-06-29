@@ -7,7 +7,8 @@ const tailSafeConfig: TailSafeConfig = {
   aliases: {
     'flex-row': ['flex', 'flex-row'],
     'flex-col': ['flex', 'flex-col'],
-    'justify': ['justify-center']
+    'justify': ['justify-center'],
+    'align': ['items-center']
     // Add more grouped/alias props as needed
   },
   theme: {}

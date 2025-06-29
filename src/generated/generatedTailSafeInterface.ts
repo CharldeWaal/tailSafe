@@ -4,6 +4,7 @@
 import {
   AbsoluteProps,
   AccentProps,
+  AlignAliasProps,
   AntialiasedProps,
   AutoProps,
   BackdropProps,
@@ -88,6 +89,7 @@ import {
 export interface TailSafe extends
   AbsoluteProps,
   AccentProps,
+  AlignAliasProps,
   AntialiasedProps,
   AutoProps,
   BackdropProps,

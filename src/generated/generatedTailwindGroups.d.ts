@@ -6,7 +6,7 @@ export type AbsoluteClass =
 ;
 
 export interface AbsoluteProps {
-  'absolute'?: AbsoluteClass | boolean;
+  absolute?: AbsoluteClass | boolean;
 }
 
 export type AccentClass =
@@ -508,7 +508,7 @@ export type AccentClass =
 ;
 
 export interface AccentProps {
-  'accent'?: AccentClass;
+  accent?: AccentClass;
 }
 
 export type AntialiasedClass =
@@ -516,7 +516,7 @@ export type AntialiasedClass =
 ;
 
 export interface AntialiasedProps {
-  'antialiased'?: AntialiasedClass | boolean;
+  antialiased?: AntialiasedClass | boolean;
 }
 
 export type AutoClass =
@@ -531,7 +531,7 @@ export type AutoClass =
 ;
 
 export interface AutoProps {
-  'auto'?: AutoClass;
+  auto?: AutoClass;
 }
 
 export type BackdropClass =
@@ -542,7 +542,7 @@ export type BackdropClass =
 ;
 
 export interface BackdropProps {
-  'backdrop'?: BackdropClass;
+  backdrop?: BackdropClass;
 }
 
 export type BgClass =
@@ -1046,7 +1046,7 @@ export type BgClass =
 ;
 
 export interface BgProps {
-  'bg'?: BgClass;
+  bg?: BgClass;
 }
 
 export type BlockClass =
@@ -1054,7 +1054,7 @@ export type BlockClass =
 ;
 
 export interface BlockProps {
-  'block'?: BlockClass | boolean;
+  block?: BlockClass | boolean;
 }
 
 export type BlurClass =
@@ -1062,7 +1062,7 @@ export type BlurClass =
 ;
 
 export interface BlurProps {
-  'blur'?: BlurClass | boolean;
+  blur?: BlurClass | boolean;
 }
 
 export type BorderClass =
@@ -1572,7 +1572,7 @@ export type BorderClass =
 ;
 
 export interface BorderProps {
-  'border'?: BorderClass | boolean;
+  border?: BorderClass | boolean;
 }
 
 export type CaretClass =
@@ -2074,7 +2074,7 @@ export type CaretClass =
 ;
 
 export interface CaretProps {
-  'caret'?: CaretClass;
+  caret?: CaretClass;
 }
 
 export type ColClass =
@@ -2122,7 +2122,7 @@ export type ColClass =
 ;
 
 export interface ColProps {
-  'col'?: ColClass;
+  col?: ColClass;
 }
 
 export type CursorClass =
@@ -2130,7 +2130,7 @@ export type CursorClass =
 ;
 
 export interface CursorProps {
-  'cursor'?: CursorClass | boolean;
+  cursor?: CursorClass | boolean;
 }
 
 export type DecorationClass =
@@ -2632,7 +2632,7 @@ export type DecorationClass =
 ;
 
 export interface DecorationProps {
-  'decoration'?: DecorationClass;
+  decoration?: DecorationClass;
 }
 
 export type DivideClass =
@@ -3134,7 +3134,7 @@ export type DivideClass =
 ;
 
 export interface DivideProps {
-  'divide'?: DivideClass;
+  divide?: DivideClass;
 }
 
 export type DropClass =
@@ -3142,7 +3142,7 @@ export type DropClass =
 ;
 
 export interface DropProps {
-  'drop'?: DropClass | boolean;
+  drop?: DropClass | boolean;
 }
 
 export type DurationClass =
@@ -3158,7 +3158,7 @@ export type DurationClass =
 ;
 
 export interface DurationProps {
-  'duration'?: DurationClass;
+  duration?: DurationClass;
 }
 
 export type EaseClass =
@@ -3167,7 +3167,7 @@ export type EaseClass =
 ;
 
 export interface EaseProps {
-  'ease'?: EaseClass;
+  ease?: EaseClass;
 }
 
 export type FillClass =
@@ -3669,7 +3669,7 @@ export type FillClass =
 ;
 
 export interface FillProps {
-  'fill'?: FillClass;
+  fill?: FillClass;
 }
 
 export type FilterClass =
@@ -3677,7 +3677,7 @@ export type FilterClass =
 ;
 
 export interface FilterProps {
-  'filter'?: FilterClass | boolean;
+  filter?: FilterClass | boolean;
 }
 
 export type FixedClass =
@@ -3685,7 +3685,7 @@ export type FixedClass =
 ;
 
 export interface FixedProps {
-  'fixed'?: FixedClass | boolean;
+  fixed?: FixedClass | boolean;
 }
 
 export type FlexClass =
@@ -3696,7 +3696,7 @@ export type FlexClass =
 ;
 
 export interface FlexProps {
-  'flex'?: FlexClass | boolean;
+  flex?: FlexClass | boolean;
 }
 
 export type FlowClass =
@@ -3704,7 +3704,7 @@ export type FlowClass =
 ;
 
 export interface FlowProps {
-  'flow'?: FlowClass | boolean;
+  flow?: FlowClass | boolean;
 }
 
 export type FontClass =
@@ -3718,7 +3718,7 @@ export type FontClass =
 ;
 
 export interface FontProps {
-  'font'?: FontClass;
+  font?: FontClass;
 }
 
 export type FromClass =
@@ -3726,7 +3726,7 @@ export type FromClass =
 ;
 
 export interface FromProps {
-  'from'?: FromClass | boolean;
+  from?: FromClass | boolean;
 }
 
 export type GapClass =
@@ -3764,7 +3764,7 @@ export type GapClass =
 ;
 
 export interface GapProps {
-  'gap'?: GapClass;
+  gap?: GapClass;
 }
 
 export type GrayscaleClass =
@@ -3772,7 +3772,7 @@ export type GrayscaleClass =
 ;
 
 export interface GrayscaleProps {
-  'grayscale'?: GrayscaleClass | boolean;
+  grayscale?: GrayscaleClass | boolean;
 }
 
 export type GridClass =
@@ -3805,7 +3805,7 @@ export type GridClass =
 ;
 
 export interface GridProps {
-  'grid'?: GridClass | boolean;
+  grid?: GridClass | boolean;
 }
 
 export type HClass =
@@ -3819,7 +3819,7 @@ export type HClass =
 ;
 
 export interface HProps {
-  'h'?: HClass;
+  h?: HClass;
 }
 
 export type HiddenClass =
@@ -3827,7 +3827,7 @@ export type HiddenClass =
 ;
 
 export interface HiddenProps {
-  'hidden'?: HiddenClass | boolean;
+  hidden?: HiddenClass | boolean;
 }
 
 export type InlineClass =
@@ -3838,7 +3838,7 @@ export type InlineClass =
 ;
 
 export interface InlineProps {
-  'inline'?: InlineClass | boolean;
+  inline?: InlineClass | boolean;
 }
 
 export type InvertClass =
@@ -3846,7 +3846,7 @@ export type InvertClass =
 ;
 
 export interface InvertProps {
-  'invert'?: InvertClass | boolean;
+  invert?: InvertClass | boolean;
 }
 
 export type ItalicClass =
@@ -3854,7 +3854,7 @@ export type ItalicClass =
 ;
 
 export interface ItalicProps {
-  'italic'?: ItalicClass | boolean;
+  italic?: ItalicClass | boolean;
 }
 
 export type ItemsClass =
@@ -3869,7 +3869,7 @@ export type ItemsClass =
 ;
 
 export interface ItemsProps {
-  'items'?: ItemsClass;
+  items?: ItemsClass;
 }
 
 export type JustifyClass =
@@ -3887,7 +3887,7 @@ export type JustifyClass =
 ;
 
 export interface JustifyProps {
-  'justify'?: JustifyClass | boolean;
+  justify?: JustifyClass | boolean;
 }
 
 export type LeadingClass =
@@ -3896,7 +3896,7 @@ export type LeadingClass =
 ;
 
 export interface LeadingProps {
-  'leading'?: LeadingClass;
+  leading?: LeadingClass;
 }
 
 export type LeftClass =
@@ -3904,7 +3904,7 @@ export type LeftClass =
 ;
 
 export interface LeftProps {
-  'left'?: LeftClass | boolean;
+  left?: LeftClass | boolean;
 }
 
 export type MaxClass =
@@ -3915,7 +3915,7 @@ export type MaxClass =
 ;
 
 export interface MaxProps {
-  'max'?: MaxClass;
+  max?: MaxClass;
 }
 
 export type MbClass =
@@ -3930,7 +3930,7 @@ export type MbClass =
 ;
 
 export interface MbProps {
-  'mb'?: MbClass;
+  mb?: MbClass;
 }
 
 export type MinClass =
@@ -3938,7 +3938,7 @@ export type MinClass =
 ;
 
 export interface MinProps {
-  'min'?: MinClass | boolean;
+  min?: MinClass | boolean;
 }
 
 export type MtClass =
@@ -3950,7 +3950,7 @@ export type MtClass =
 ;
 
 export interface MtProps {
-  'mt'?: MtClass;
+  mt?: MtClass;
 }
 
 export type MxClass =
@@ -3960,7 +3960,7 @@ export type MxClass =
 ;
 
 export interface MxProps {
-  'mx'?: MxClass;
+  mx?: MxClass;
 }
 
 export type MyClass =
@@ -3968,7 +3968,7 @@ export type MyClass =
 ;
 
 export interface MyProps {
-  'my'?: MyClass | boolean;
+  my?: MyClass | boolean;
 }
 
 export type ObjectClass =
@@ -3980,7 +3980,7 @@ export type ObjectClass =
 ;
 
 export interface ObjectProps {
-  'object'?: ObjectClass;
+  object?: ObjectClass;
 }
 
 export type OpacityClass =
@@ -3989,7 +3989,7 @@ export type OpacityClass =
 ;
 
 export interface OpacityProps {
-  'opacity'?: OpacityClass;
+  opacity?: OpacityClass;
 }
 
 export type OutlineClass =
@@ -4492,7 +4492,7 @@ export type OutlineClass =
 ;
 
 export interface OutlineProps {
-  'outline'?: OutlineClass | boolean;
+  outline?: OutlineClass | boolean;
 }
 
 export type OverflowClass =
@@ -4501,7 +4501,7 @@ export type OverflowClass =
 ;
 
 export interface OverflowProps {
-  'overflow'?: OverflowClass;
+  overflow?: OverflowClass;
 }
 
 export type PClass =
@@ -4514,7 +4514,7 @@ export type PClass =
 ;
 
 export interface PProps {
-  'p'?: PClass;
+  p?: PClass;
 }
 
 export type PlClass =
@@ -4522,7 +4522,7 @@ export type PlClass =
 ;
 
 export interface PlProps {
-  'pl'?: PlClass | boolean;
+  pl?: PlClass | boolean;
 }
 
 export type PlaceClass =
@@ -4546,7 +4546,7 @@ export type PlaceClass =
 ;
 
 export interface PlaceProps {
-  'place'?: PlaceClass;
+  place?: PlaceClass;
 }
 
 export type PointerClass =
@@ -4554,7 +4554,7 @@ export type PointerClass =
 ;
 
 export interface PointerProps {
-  'pointer'?: PointerClass | boolean;
+  pointer?: PointerClass | boolean;
 }
 
 export type PrClass =
@@ -4562,7 +4562,7 @@ export type PrClass =
 ;
 
 export interface PrProps {
-  'pr'?: PrClass | boolean;
+  pr?: PrClass | boolean;
 }
 
 export type PtClass =
@@ -4571,7 +4571,7 @@ export type PtClass =
 ;
 
 export interface PtProps {
-  'pt'?: PtClass;
+  pt?: PtClass;
 }
 
 export type PxClass =
@@ -4581,7 +4581,7 @@ export type PxClass =
 ;
 
 export interface PxProps {
-  'px'?: PxClass;
+  px?: PxClass;
 }
 
 export type PyClass =
@@ -4595,7 +4595,7 @@ export type PyClass =
 ;
 
 export interface PyProps {
-  'py'?: PyClass;
+  py?: PyClass;
 }
 
 export type RelativeClass =
@@ -4603,7 +4603,7 @@ export type RelativeClass =
 ;
 
 export interface RelativeProps {
-  'relative'?: RelativeClass | boolean;
+  relative?: RelativeClass | boolean;
 }
 
 export type ResizeClass =
@@ -4611,7 +4611,7 @@ export type ResizeClass =
 ;
 
 export interface ResizeProps {
-  'resize'?: ResizeClass | boolean;
+  resize?: ResizeClass | boolean;
 }
 
 export type RightClass =
@@ -4620,7 +4620,7 @@ export type RightClass =
 ;
 
 export interface RightProps {
-  'right'?: RightClass;
+  right?: RightClass;
 }
 
 export type RingClass =
@@ -5123,7 +5123,7 @@ export type RingClass =
 ;
 
 export interface RingProps {
-  'ring'?: RingClass | boolean;
+  ring?: RingClass | boolean;
 }
 
 export type RoundedClass =
@@ -5142,7 +5142,7 @@ export type RoundedClass =
 ;
 
 export interface RoundedProps {
-  'rounded'?: RoundedClass | boolean;
+  rounded?: RoundedClass | boolean;
 }
 
 export type RowClass =
@@ -5178,7 +5178,7 @@ export type RowClass =
 ;
 
 export interface RowProps {
-  'row'?: RowClass;
+  row?: RowClass;
 }
 
 export type SepiaClass =
@@ -5186,7 +5186,7 @@ export type SepiaClass =
 ;
 
 export interface SepiaProps {
-  'sepia'?: SepiaClass | boolean;
+  sepia?: SepiaClass | boolean;
 }
 
 export type ShadowClass =
@@ -5196,7 +5196,7 @@ export type ShadowClass =
 ;
 
 export interface ShadowProps {
-  'shadow'?: ShadowClass | boolean;
+  shadow?: ShadowClass | boolean;
 }
 
 export type SpaceClass =
@@ -5207,7 +5207,7 @@ export type SpaceClass =
 ;
 
 export interface SpaceProps {
-  'space'?: SpaceClass;
+  space?: SpaceClass;
 }
 
 export type SrClass =
@@ -5215,7 +5215,7 @@ export type SrClass =
 ;
 
 export interface SrProps {
-  'sr'?: SrClass | boolean;
+  sr?: SrClass | boolean;
 }
 
 export type StaticClass =
@@ -5223,7 +5223,7 @@ export type StaticClass =
 ;
 
 export interface StaticProps {
-  'static'?: StaticClass | boolean;
+  static?: StaticClass | boolean;
 }
 
 export type StickyClass =
@@ -5231,7 +5231,7 @@ export type StickyClass =
 ;
 
 export interface StickyProps {
-  'sticky'?: StickyClass | boolean;
+  sticky?: StickyClass | boolean;
 }
 
 export type StrokeClass =
@@ -5733,7 +5733,7 @@ export type StrokeClass =
 ;
 
 export interface StrokeProps {
-  'stroke'?: StrokeClass;
+  stroke?: StrokeClass;
 }
 
 export type TableClass =
@@ -5741,7 +5741,7 @@ export type TableClass =
 ;
 
 export interface TableProps {
-  'table'?: TableClass | boolean;
+  table?: TableClass | boolean;
 }
 
 export type TextClass =
@@ -6251,7 +6251,7 @@ export type TextClass =
 ;
 
 export interface TextProps {
-  'text'?: TextClass;
+  text?: TextClass;
 }
 
 export type ToClass =
@@ -6259,7 +6259,7 @@ export type ToClass =
 ;
 
 export interface ToProps {
-  'to'?: ToClass | boolean;
+  to?: ToClass | boolean;
 }
 
 export type TopClass =
@@ -6268,7 +6268,7 @@ export type TopClass =
 ;
 
 export interface TopProps {
-  'top'?: TopClass;
+  top?: TopClass;
 }
 
 export type TrackingClass =
@@ -6278,7 +6278,7 @@ export type TrackingClass =
 ;
 
 export interface TrackingProps {
-  'tracking'?: TrackingClass;
+  tracking?: TrackingClass;
 }
 
 export type TransformClass =
@@ -6286,7 +6286,7 @@ export type TransformClass =
 ;
 
 export interface TransformProps {
-  'transform'?: TransformClass | boolean;
+  transform?: TransformClass | boolean;
 }
 
 export type TransitionClass =
@@ -6300,7 +6300,7 @@ export type TransitionClass =
 ;
 
 export interface TransitionProps {
-  'transition'?: TransitionClass | boolean;
+  transition?: TransitionClass | boolean;
 }
 
 export type TranslateClass =
@@ -6309,7 +6309,7 @@ export type TranslateClass =
 ;
 
 export interface TranslateProps {
-  'translate'?: TranslateClass;
+  translate?: TranslateClass;
 }
 
 export type UnderlineClass =
@@ -6317,7 +6317,7 @@ export type UnderlineClass =
 ;
 
 export interface UnderlineProps {
-  'underline'?: UnderlineClass | boolean;
+  underline?: UnderlineClass | boolean;
 }
 
 export type UppercaseClass =
@@ -6325,7 +6325,7 @@ export type UppercaseClass =
 ;
 
 export interface UppercaseProps {
-  'uppercase'?: UppercaseClass | boolean;
+  uppercase?: UppercaseClass | boolean;
 }
 
 export type WClass =
@@ -6339,7 +6339,7 @@ export type WClass =
 ;
 
 export interface WProps {
-  'w'?: WClass;
+  w?: WClass;
 }
 
 export type ZClass =
@@ -6350,7 +6350,7 @@ export type ZClass =
 ;
 
 export interface ZProps {
-  'z'?: ZClass;
+  z?: ZClass;
 }
 
 /**
@@ -6365,5 +6365,12 @@ export interface FlexRowAliasProps {
  */
 export interface FlexColAliasProps {
   'flex-col'?: boolean;
+}
+
+/**
+ * AlignAliasProps alias
+ */
+export interface AlignAliasProps {
+  align?: boolean;
 }
 

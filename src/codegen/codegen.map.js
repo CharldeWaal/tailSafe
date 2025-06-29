@@ -14,7 +14,7 @@ const content = fs.readFileSync(groupsPath, 'utf8');
 // Find all interfaces like: export interface JustifyProps { 'justify'?: JustifyClass; }
 // This regex handles quoted property names by specifically capturing the content within the quotes
 // This regex captures the prop name (group 1) and its full type definition (group 2).
-const propRegex = /'([\w-]+)'\?:\s*([^;]+);/g;
+const propRegex = /'?([\w-]+)'?\?:\s*([^;]+);/g;
 
 let match;
 const map = {};
