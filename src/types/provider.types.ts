@@ -10,5 +10,5 @@ export interface TailSafeProviderProps {
 export interface TailSafeContextState {
     debug: Required<boolean>;
     userAliases?: UserAliases;
-    transformProps: <T extends { className?: string }>(props: T & Partial<TailSafe>) => T & { className: string };
+    transformProps: <T extends { className?: string }>(props: T & Partial<TailSafe>) => { domProps: Partial<T>, className: string };
 }

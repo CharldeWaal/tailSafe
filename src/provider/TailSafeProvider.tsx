@@ -4,6 +4,7 @@ import React, { createContext, useCallback } from 'react';
 import { TailSafe } from '../types';
 import { construct } from '../utils/tailSafe.utils';
 import { TailSafeContextState, TailSafeProviderProps } from '../types/provider.types';
+import { filterDomProps } from '../utils';
 
 export const TailSafeContext = createContext<TailSafeContextState>({} as TailSafeContextState);
 
@@ -13,10 +14,13 @@ export const TailSafeProvider: React.FC<TailSafeProviderProps> = ({
     debug = false
 }) => {
 
-    const transformProps = useCallback(<T extends { className?: string }>(props: T & Partial<TailSafe>): T & { className: string } => {
-        const { className: originalClassName, ...tailSafeProps } = props;
+    const transformProps = useCallback(<T extends { className?: string }>(props: T & Partial<TailSafe>): { domProps: Partial<T>, className: string } => {
+
+        // Filter out tailSafe props and user aliases - these should not be passed to the dom
+        const { tailSafeProps, domProps } = filterDomProps(props, userAliases);
 
         const tailSafeClassName = construct(tailSafeProps as TailSafe, userAliases);
+        const { className: originalClassName, ...restDomProps } = domProps as { className?: string; } & Record<string, unknown>;
         const mergedClassName = [originalClassName, tailSafeClassName]
             .filter(Boolean)
             .join(' ');
@@ -31,7 +35,7 @@ export const TailSafeProvider: React.FC<TailSafeProviderProps> = ({
         }
 
         return {
-            ...props,
+            domProps: restDomProps as Partial<T>,
             className: mergedClassName,
         };
     }, [userAliases, debug]);

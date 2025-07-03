@@ -11,7 +11,7 @@ module.exports = {
             types: path.join(generatedDir, 'generatedTailwindTypes.d.ts'),
             colors: path.join(generatedDir, 'generatedTailwindColors.d.ts'),
             groups: path.join(generatedDir, 'generatedTailwindGroups.d.ts'),
-            map: path.join(generatedDir, 'generatedTailSafeMap.ts'),
+            map: path.join(generatedDir, 'generatedTailSafeMap.js'),
             allProps: path.join(generatedDir, 'generatedAllProps.ts'),
             tailSafeInterface: path.join(generatedDir, 'generatedTailSafeInterface.ts')
         },

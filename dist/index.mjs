@@ -54,14 +54,14 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/generated/generatedTailSafeMap.ts
+// src/generated/generatedTailSafeMap.js
 var generatedTailSafeMap_exports = {};
 __export(generatedTailSafeMap_exports, {
   tailSafeMap: () => tailSafeMap
 });
 var tailSafeMap;
 var init_generatedTailSafeMap = __esm({
-  "src/generated/generatedTailSafeMap.ts"() {
+  "src/generated/generatedTailSafeMap.js"() {
     "use strict";
     tailSafeMap = {
       "absolute": (v) => v === true ? "absolute" : v,
@@ -262,11 +262,118 @@ var construct = (props, userAliases) => {
         }
       }
     } else if (process.env.NODE_ENV === "development") {
-      console.warn(`TailSafe: Unknown prop "${key}" with value "${value}". Add it to your aliases or check for typos.`);
+      console.warn(`TailSafe: Unknown prop "${key}" with value "${value}"`);
     }
   }
   return classNames.filter(Boolean).join(" ");
 };
+
+// src/generated/generatedAllProps.ts
+var allTailSafeProps = [
+  "absolute",
+  "accent",
+  "align",
+  "antialiased",
+  "auto",
+  "backdrop",
+  "bg",
+  "block",
+  "blur",
+  "border",
+  "caret",
+  "col",
+  "cursor",
+  "decoration",
+  "divide",
+  "drop",
+  "duration",
+  "ease",
+  "fill",
+  "filter",
+  "fixed",
+  "flex",
+  "flex-col",
+  "flex-row",
+  "flow",
+  "font",
+  "from",
+  "gap",
+  "grayscale",
+  "grid",
+  "h",
+  "hidden",
+  "inline",
+  "invert",
+  "italic",
+  "items",
+  "justify",
+  "leading",
+  "left",
+  "max",
+  "mb",
+  "min",
+  "mt",
+  "mx",
+  "my",
+  "object",
+  "opacity",
+  "outline",
+  "overflow",
+  "p",
+  "pl",
+  "place",
+  "pointer",
+  "pr",
+  "pt",
+  "px",
+  "py",
+  "relative",
+  "resize",
+  "right",
+  "ring",
+  "rounded",
+  "row",
+  "sepia",
+  "shadow",
+  "space",
+  "sr",
+  "static",
+  "sticky",
+  "stroke",
+  "table",
+  "text",
+  "to",
+  "top",
+  "tracking",
+  "transform",
+  "transition",
+  "translate",
+  "underline",
+  "uppercase",
+  "w",
+  "z"
+];
+
+// src/utils/dom.utils.ts
+function filterDomProps(props, userAliases = {}) {
+  const tailSafeProps = {};
+  const domProps = {};
+  console.log("TAILSAFE_PROPS", allTailSafeProps.length);
+  const userAliasKeys = userAliases ? Object.keys(userAliases) : [];
+  const tailSafePropsToFilter = /* @__PURE__ */ new Set([
+    ...allTailSafeProps,
+    // Generated TailSafe props (may be empty if codegen failed)
+    ...userAliasKeys
+  ]);
+  for (const key in props) {
+    if (!tailSafePropsToFilter.has(key)) {
+      domProps[key] = props[key];
+    } else {
+      tailSafeProps[key] = props[key];
+    }
+  }
+  return { domProps, tailSafeProps };
+}
 
 // src/provider/TailSafeProvider.tsx
 import { jsx } from "react/jsx-runtime";
@@ -277,8 +384,9 @@ var TailSafeProvider = ({
   debug = false
 }) => {
   const transformProps = useCallback((props) => {
-    const _a = props, { className: originalClassName } = _a, tailSafeProps = __objRest(_a, ["className"]);
+    const { tailSafeProps, domProps } = filterDomProps(props, userAliases);
     const tailSafeClassName = construct(tailSafeProps, userAliases);
+    const _a = domProps, { className: originalClassName } = _a, restDomProps = __objRest(_a, ["className"]);
     const mergedClassName = [originalClassName, tailSafeClassName].filter(Boolean).join(" ");
     if (debug) {
       console.log("TailSafe transformed props:", {
@@ -287,9 +395,10 @@ var TailSafeProvider = ({
         userAliases
       });
     }
-    return __spreadProps(__spreadValues({}, props), {
+    return {
+      domProps: restDomProps,
       className: mergedClassName
-    });
+    };
   }, [userAliases, debug]);
   const contextValue = {
     debug,
@@ -333,39 +442,12 @@ var useTailSafe = () => useContext(TailSafeContext);
 // src/hooks/useConfig/useConfig.ts
 import { useMemo as useMemo2 } from "react";
 
-// src/utils/dom.utils.ts
-var TAILSAFE_PROPS = /* @__PURE__ */ new Set();
-try {
-  const { allTailSafeProps } = __require("../../generated/generatedAllProps");
-  TAILSAFE_PROPS = new Set(allTailSafeProps || []);
-} catch (error) {
-  console.warn("TailSafe: Generated props not found, relying on user aliases for filtering");
-  TAILSAFE_PROPS = /* @__PURE__ */ new Set();
-}
-function filterDomProps(props, userAliases = {}) {
-  const domProps = {};
-  const userAliasKeys = userAliases ? globalThis.Object.keys(userAliases) : [];
-  const propsToFilter = /* @__PURE__ */ new Set([
-    ...TAILSAFE_PROPS,
-    // Generated TailSafe props (may be empty if codegen failed)
-    ...userAliasKeys
-    // User-defined aliases (always preserved)
-  ]);
-  for (const key in props) {
-    if (!propsToFilter.has(key)) {
-      domProps[key] = props[key];
-    }
-  }
-  return domProps;
-}
-
 // src/components/HtmlElements/htmlElement.tsx
 import { jsx as jsx3 } from "react/jsx-runtime";
 var createTailSafeHtmlElement = (element) => {
   const Component = React3.forwardRef((props, ref) => {
     const { transformProps, userAliases = {} } = useTailSafe();
-    const _a = transformProps(props), { className } = _a, rest = __objRest(_a, ["className"]);
-    const domProps = filterDomProps(rest, userAliases);
+    const { domProps, className } = transformProps(props);
     const Element = element;
     return /* @__PURE__ */ jsx3(Element, __spreadProps(__spreadValues({ ref }, domProps), { className, children: props.children }));
   });
@@ -492,9 +574,8 @@ import { jsx as jsx4 } from "react/jsx-runtime";
 function withTailSafe(Component) {
   const Wrapped = React4.forwardRef((props, ref) => {
     const { transformProps, userAliases = {} } = useTailSafe();
-    const _a = transformProps(props), { className } = _a, rest = __objRest(_a, ["className"]);
-    const domProps = filterDomProps(rest, userAliases);
-    return /* @__PURE__ */ jsx4(Component, __spreadProps(__spreadValues({}, domProps), { ref }));
+    const { domProps, className } = transformProps(props);
+    return /* @__PURE__ */ jsx4(Component, __spreadProps(__spreadValues({}, domProps), { className, ref }));
   });
   Wrapped.displayName = `withTailSafe(${Component.displayName || Component.name || "Component"})`;
   return Wrapped;
