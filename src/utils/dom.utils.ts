@@ -10,8 +10,6 @@ export function filterDomProps<T extends Record<string, unknown>>(
     const tailSafeProps: Partial<T> = {};
     const domProps: Partial<T> = {};
 
-    console.log('TAILSAFE_PROPS', TAILSAFE_PROPS.length);
-
     // Create a combined set of props to filter out
     const userAliasKeys = userAliases ? Object.keys(userAliases) : [];
     const tailSafePropsToFilter = new Set([
