@@ -15,7 +15,6 @@ export const allTailSafeProps: string[] = [
   "blur",
   "border",
   "caret",
-  "className",
   "col",
   "cursor",
   "decoration",

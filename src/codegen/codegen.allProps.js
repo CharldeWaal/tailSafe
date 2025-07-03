@@ -11,7 +11,7 @@ const outputFilePath = paths.generated.allProps;
 const groupsFileContent = fs.readFileSync(groupsFilePath, 'utf-8');
 
 // This regex finds all property keys within the generated `...Props` interfaces.
-const propRegex = /^\s*'?([\w-]+)'?\??:/gm;
+const propRegex = /\s*'?([\w-]+)'?\??:/gm;
 
 const allProps = new Set();
 let match;
@@ -21,9 +21,6 @@ while ((match = propRegex.exec(groupsFileContent))) {
 
 // Ensure alias props from the config are included.
 Object.keys(tailSafeConfig.aliases).forEach(prop => allProps.add(prop));
-
-// Add `className` to the list of props to be filtered, as it's handled separately.
-allProps.add('className');
 
 const allPropKeys = Array.from(allProps).sort();
 

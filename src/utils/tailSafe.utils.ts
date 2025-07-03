@@ -109,7 +109,6 @@ export const construct = (props: TailSafe, userAliases?: UserAliases): string =>
 
     const processor = runtimeMap[key];
     if (processor) {
-      // Known prop with processor function
       const result = processor(value);
       if (result) classNames.push(String(result));
     } else if (useFallbackMode) {
@@ -125,7 +124,7 @@ export const construct = (props: TailSafe, userAliases?: UserAliases): string =>
     } else if (process.env.NODE_ENV === 'development') {
       // Normal mode: warn about unknown props
       // eslint-disable-next-line no-console
-      console.warn(`TailSafe: Unknown prop "${key}" with value "${value}". Add it to your aliases or check for typos.`);
+      console.warn(`TailSafe: Unknown prop "${key}" with value "${value}"`);
     }
   }
 

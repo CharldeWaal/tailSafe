@@ -1,35 +1,31 @@
 import { UserAliases } from "../types";
-
-// Graceful import with fallback for generated props
-let TAILSAFE_PROPS: Set<string> = new Set();
-try {
-    // eslint-disable-next-line
-    const { allTailSafeProps } = require('../../generated/generatedAllProps');
-    TAILSAFE_PROPS = new Set(allTailSafeProps || []);
-    // eslint-disable-next-line
-} catch (error) {
-    // eslint-disable-next-line no-console
-    console.warn('TailSafe: Generated props not found, relying on user aliases for filtering');
-    TAILSAFE_PROPS = new Set();
-}
+import { allTailSafeProps as TAILSAFE_PROPS } from "../generated/generatedAllProps";
 
 
 // This function filters out non-DOM props
-export function filterDomProps(props: Record<string, unknown>, userAliases: UserAliases = {}) {
-    const domProps: Record<string, unknown> = {};
+export function filterDomProps<T extends Record<string, unknown>>(
+    props: T,
+    userAliases: UserAliases = {}
+): { tailSafeProps: Partial<T>; domProps: Partial<T> } {
+    const tailSafeProps: Partial<T> = {};
+    const domProps: Partial<T> = {};
+
+    console.log('TAILSAFE_PROPS', TAILSAFE_PROPS.length);
 
     // Create a combined set of props to filter out
-    const userAliasKeys = userAliases ? globalThis.Object.keys(userAliases) : [];
-    const propsToFilter = new Set([
+    const userAliasKeys = userAliases ? Object.keys(userAliases) : [];
+    const tailSafePropsToFilter = new Set([
         ...TAILSAFE_PROPS, // Generated TailSafe props (may be empty if codegen failed)
-        ...userAliasKeys,  // User-defined aliases (always preserved)
+        ...userAliasKeys,
     ]);
 
     for (const key in props) {
         // Filter out TailSafe props and user aliases, allow everything else
-        if (!propsToFilter.has(key)) {
+        if (!tailSafePropsToFilter.has(key)) {
             domProps[key] = props[key];
+        } else {
+            tailSafeProps[key] = props[key];
         }
     }
-    return domProps;
+    return { domProps, tailSafeProps };
 }

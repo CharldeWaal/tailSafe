@@ -18,10 +18,7 @@ const createTailSafeHtmlElement = <T extends keyof JSX.IntrinsicElements>(
   >((props, ref) => {
     const { transformProps, userAliases = {} } = useTailSafe();
     // transformProps returns all original props, plus 'className'
-    const { className, ...rest } = transformProps(props);
-
-    // Filter out tailSafe props and user aliases - these should not be passed to the dom
-    const domProps = filterDomProps(rest, userAliases);
+    const { domProps, className } = transformProps(props);
 
     const Element = element as React.ElementType;
 

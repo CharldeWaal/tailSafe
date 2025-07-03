@@ -9,11 +9,10 @@ export function withTailSafe<P extends object, R = unknown>(
     const Wrapped = React.forwardRef<R, P & Partial<TailSafe>>((props, ref) => {
         const { transformProps, userAliases = {} } = useTailSafe();
         // transformProps returns all original props, plus 'className'
-        const { className, ...rest } = transformProps(props);
+        const { domProps, className } = transformProps(props);
 
         // Filter out tailSafe props and user aliases - these should not be passed to the dom
-        const domProps = filterDomProps(rest, userAliases);
-        return <Component {...(domProps as P)} ref={ref} />;
+        return <Component {...(domProps as P)} className={className} ref={ref} />;
     });
 
     // Set a display name for easier debugging

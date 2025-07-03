@@ -44,14 +44,14 @@ while ((match = propRegex.exec(content))) {
       const classNames = tailSafeConfig.aliases[propName];
       const classString = classNames.join(' ');
       // If true, expand to classes; otherwise, pass value through.
-      map[propName] = `(v: boolean | string) => (v === true ? '${classString}' : v)`;
+      map[propName] = `(v) => (v === true ? '${classString}' : v)`;
     } else {
       // It's a simple boolean utility (e.g., 'flex'), where the class is the prop name itself.
-      map[propName] = `(v: boolean | string) => (v === true ? '${propName}' : v)`;
+      map[propName] = `(v) => (v === true ? '${propName}' : v)`;
     }
   } else {
     // It's a standard prop, so the value is the class.
-    map[propName] = '(v: string) => v';
+    map[propName] = '(v) => v';
   }
 }
 
