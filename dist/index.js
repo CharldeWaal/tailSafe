@@ -484,7 +484,6 @@ var allTailSafeProps = [
 function filterDomProps(props, userAliases = {}) {
   const tailSafeProps = {};
   const domProps = {};
-  console.log("TAILSAFE_PROPS", allTailSafeProps.length);
   const userAliasKeys = userAliases ? Object.keys(userAliases) : [];
   const tailSafePropsToFilter = /* @__PURE__ */ new Set([
     ...allTailSafeProps,
