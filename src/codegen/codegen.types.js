@@ -6,6 +6,8 @@ const { paths } = require('../config/codegen.config');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { execSync } = require('child_process');
 
+const tailwindCliPath = require.resolve('tailwindcss');
+
 const inputCss = paths.config.inputCss;
 const outputCss = paths.generated.outputCss;
 const configJs = paths.config.tailwind;
@@ -15,7 +17,7 @@ const dtsOutPath = paths.generated.types;
 // eslint-disable-next-line no-console
 console.log('Generating output.css with Tailwind CLI...');
 try {
-  execSync(`npx tailwindcss -i ${inputCss} -o ${outputCss} --config ${configJs}`, { stdio: 'inherit' });
+  execSync(`node ${tailwindCliPath} -i ${inputCss} -o ${outputCss} --config ${configJs}`, { stdio: 'inherit' });
 } catch (e) {
   // eslint-disable-next-line no-console
   console.error('Failed to run Tailwind CLI with npx. Make sure @tailwindcss/cli is installed and accessible.');
